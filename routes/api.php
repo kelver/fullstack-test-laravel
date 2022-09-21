@@ -1,6 +1,7 @@
 <?php
 
     use App\Http\Controllers\GetDateTimeController;
+    use App\Http\Controllers\MessageController;
     use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,11 @@ Route::get('/', function (Request $request) {
 
 Route::get('/hello', [ HelloController::class, 'hello' ]);
 Route::get('/datetime', [ GetDateTimeController::class, 'index' ]);
+
+Route::controller(MessageController::class)->prefix('messages')->group(function () {
+    Route::get('/', 'index');
+    Route::post('/store', 'store');
+});
 
 // TODO: criar uma rota que retorne a data-hora atual (sugestão: use a função `now()`)
 // TODO: criar uma rota POST que chame uma função em um controller e retorne o texto recebido na requisição
