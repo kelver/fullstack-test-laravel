@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MessageResource;
 use App\Services\MessageService;
 use Illuminate\Http\Request;
 
@@ -16,11 +17,13 @@ class MessageController extends Controller
 
     public function index()
     {
-        return $this->messageService->index();
+        return MessageResource::collection($this->messageService->index());
     }
 
     public function store(Request $request)
     {
-        return $this->messageService->store($request->all());
+        $this->messageService->store($request->all());
+
+        return response()->json(['data' => 'Mensagem inserida com sucesso.'], 201);
     }
 }
