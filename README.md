@@ -1,21 +1,52 @@
-# Fullstack Test Laravel
+<p align="center"><img src="https://user-images.githubusercontent.com/22528943/191651100-84736963-3cd8-4282-a95c-6296622e2e3a.png" width="400"></a></p>
 
-## Descrição
 
-Projeto em Laravel (v8.x) criado com o comando `composer create-project laravel/laravel fullstack-test-laravel`.
 
-## Pré-requisitos e ambiente de desenvolvimento
+> ### Teste técnico aplicado para vaga Analista de Desenvolvimento PHP - Laravel - Full Stack - PLENO.
 
-- PHP >= 7.3 (sugestão: se estiver utilizando Windows, use o [Laragon](https://laragon.org/download/) e siga [este tutorial](https://forum.laragon.org/topic/166/tutorial-how-to-add-another-php-version) para adicionar novas versões do PHP)
-- [Composer](https://getcomposer.org/) 2.0 package manager
+Empresa: Novakio | Penze
 
-## Referências
+----------
 
-- [Documentação oficial](https://laravel.com/docs/8.x) do Laravel
-- [Coleção de links](https://raindrop.io/fromagio-cristiano/penze-laravel-5191096) selecionados e organizados no Raindrop
+# Início
 
-## Comandos úteis
+## Instalação
 
-- `php artisan serve`: iniciar servidor local de desenvolvimento em `http://localhost:8000/`
-- `php artisan make:foobar FoobarName`: gerar classes e componentes
-- `php artisan list`: ver todos os comandos do `artisan`
+Clone o repositório
+
+    git clone https://github.com/kelver/fullstack-test-laravel.git
+
+Acesse a pasta do projeto
+
+    cd ./fullstack-test-laravel
+
+Instale todas as dependências com o composer
+
+    composer install
+
+Copie o arquivo .env.example e faça as configurações de banco de dados necessárias.
+
+    cp .env.example .env
+
+Gere uma nova chave de aplicação
+
+    php artisan key:generate
+
+Execute as migrations para criar as tabelas no banco de dados. (**Necessário configuração do arquivo .env antes de executar as migrations**)
+
+    php artisan migrate
+
+Pode executar o servidor embutido, ou utilizar um servidor local como preferir.
+
+    php artisan serve --port=8000
+(**A porta está sendo indicada, pois, é a porta usada na aplicação frontend.**)
+
+Caso tenha usado o servidor embutido, pode acessar a api http://localhost:8000/api
+
+Se tudo estiver ok, você deve ver uma mensagem na tela acessando a rota acima:
+
+![apiOk](https://user-images.githubusercontent.com/22528943/191650971-f1af1fe7-e580-408f-82ab-c1f82b790313.png)
+
+Mais informações e detalhes, estou a disposição.
+
+----------
